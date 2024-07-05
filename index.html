@@ -35,6 +35,14 @@
         <p class="add" id="total">sum</p>
         <button type="submit" onclick="summ()">Cal</button>
     </div>
-   
+    <script>
+       function summ(){
+        const number1=document.getElementById("num1")
+        const number2=document.getElementById("num2")
+        const sum= parseInt(number1.value) + parseInt(number2.value)
+        const add= document.getElementById("total")
+        add.innerText=`Sum : ${sum}`
+    }
+    </script>
 </body>
 </html>
