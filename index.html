@@ -35,8 +35,12 @@
             height: 20px;
         }
         .btn{
-            margin: 0 90px;
           cursor: pointer;
+          margin: 0px 10px 0px 10px;
+        }
+        .box{
+            display: flex;
+            justify-content: space-between;
         }
       
     </style>
@@ -49,28 +53,29 @@
         <input type="text" placeholder="Enter 1st NUM" id="num1" class="text">
         <input type="text" placeholder="Enter 2nd Num" id="num2" class="text">
     </div>
-        <div class="box">
         <p class="add" id="total"></p>
+        <div class="box">
         <button type="submit" class="btn" onclick="summ()">Addition</button>
-        <button type="submit" class="btn" onclick="clear()">clear</button>
+        <button type="submit" class="btn" onclick="resetSum()">clear</button>
 
     </div>
     </div>
     <script>
+          const number1=document.getElementById("num1")
+          const number2=document.getElementById("num2")
+          const add= document.getElementById("total")
+
+
        function summ(){
-        const number1=document.getElementById("num1")
-        const number2=document.getElementById("num2")
         const sum= parseInt(number1.value || 0) + parseInt(number2.value || 0)
-        const add= document.getElementById("total")
         add.innerText=`Addition is: ${sum}`
     }
-    function clear(){
-        const number1=document.getElementById("num1")
-        const number2=document.getElementById("num2")
-        number1.value=" "
-        number2.value=" "
-        add.innerText=` `
-    }
+    function resetSum() {
+        number1.value = "";
+        number2.value = "";
+        add.innerText = "";
+      }
+
     </script>
 </body>
 </html>
